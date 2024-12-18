@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    /* background-image: url(assets/084dcb53-8b26-4595-9b15-d32ed634804a.jpg); */
+}
+
+.main::before {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: url(assets/a4656a30-0606-4a25-b1ad-0923af646a1f.jpg);
+    background-size: cover;
+    background-position: center;
+    animation: bg-zoomin 4s ease-in-out 1 forwards;
+}
+
+.main::after {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    background-image: url(assets/Untitled.png);
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: transparent;
+    animation: bg-zoomout 4s ease-in-out  1 forwards;
+}
+.item{
+    height: 400px;
+    width: 400px;
+    /* background-color: red; */
+    position: relative;
+    top: 50%;
+    background-image: url(assets/158243278_10571906.png);
+    background-position: center;
+    background-size: contain;
+    z-index: 1;
+    inset: 0;
+    animation: up 6s ease-in-out 1 forwards;
+}
+.main>button{
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+    color: white;
+    border-radius: 20px;
+    border: 1px solid white;
+    padding: 10px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 3px;
+    animation: visibility 5s ease-in  1 forwards ;
+    /* z-index: -4; */
+}
+.main>button:hover{
+    background-color: orange;
+    border: 1px solid orange;
+}
+@keyframes visibility{
+    from{
+        z-index: -4;
+    }
+    to{
+       z-index: -1;
+    }
+}
+@keyframes up{
+    from{
+      transform: translateY(600px);
+    }
+    to{
+       transform: translateY(0px);
+    }
+}
+@keyframes bg-zoomin {
+    from {
+        scale: 2.1;
+    }
+
+    to {
+        scale: 1;
+    }
+}
+
+@keyframes bg-zoomout {
+    form {
+        scale: 1;
+    }
+
+    to {
+        scale: 1.3;
+    }
+}
